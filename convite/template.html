@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convite - Nome do Convidado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        title: ["CinzelDecorative", "serif"],
+                        ephesis: ["Ephesis", "cursive"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-rose-50 text-gray-800 min-h-screen">
+    <main class="max-w-2xl mx-auto px-6 py-10">
+        <section class="bg-white rounded-2xl shadow p-6 md:p-8">
+            <h1 class="text-3xl font-title mt-2 text-center">CASAMENTO NICOLAS E GIOVANA
+            </h1>
+            <p class="text-lg mt-1 text-green-800 font-ephesis text-center">10 de outubro de 2026</p>
+            <p class="text-lg text-green-800 font-ephesis text-center">Cuiabá - MT</p>
+            <p class="mt-3 text-m font-semibold">Olá, [NOME DO CONVIDADO]</p>
+            <p class="text-gray-600">
+                Ficamos muito felizes em ter você conosco nesse dia especial.
+            </p>
+
+            <hr class="my-6" />
+
+            <form id="invite-form" class="space-y-6" novalidate>
+                <div>
+                    <label class="block font-medium mb-2">Você irá ao casamento?</label>
+                    <div class="flex gap-6">
+                        <label class="inline-flex items-center gap-2">
+                            <input type="radio" name="presenca" value="sim" />
+                            <span>Sim</span>
+                        </label>
+                        <label class="inline-flex items-center gap-2">
+                            <input type="radio" name="presenca" value="nao" />
+                            <span>Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="donation" class="block font-medium mb-2">
+                        Deseja dar um presente?
+                    </label>
+                    <select id="donation" class="w-full border rounded-xl px-4 py-3">
+                        <option value="none">Não desejo dar um presente</option>
+                        <option value="other">Sim, desejo dar um presente</option>
+                    </select>
+                </div>
+
+                <div id="pix-section" class="hidden border rounded-xl p-4 bg-rose-50">
+                    <p class="font-semibold">Pagamento via Pix</p>
+                    <p class="text-sm text-gray-600 mt-1 mb-3">
+                        Escaneie o QR Code abaixo para realizar a doação.
+                    </p>
+                    <img src="../assets/img/pix-qrcode-placeholder.png" alt="QR Code Pix (placeholder)"
+                        class="w-48 h-48 object-contain border rounded-lg bg-white p-2" />
+                </div>
+
+                <p id="form-message" class="hidden text-sm rounded-lg px-3 py-2"></p>
+
+                <button type="submit"
+                    class="w-full bg-yellow-700 hover:bg-rose-600 text-white font-semibold py-3 rounded-xl transition">
+                    Enviar confirmação
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="../assets/js/invite-form.js"></script>
+</body>
+
+</html>
